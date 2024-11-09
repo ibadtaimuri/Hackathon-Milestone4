@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Resume Builder</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Form Section -->
+        <section class="form-section">
+            <h1>Build Your Resume</h1>
+            <form id="resume-form">
+                <h2>Personal Information</h2>
+                <label>Name: <input type="text" id="name" required></label>
+                <label>Email: <input type="email" id="email" required></label>
+                <label>Profile Picture URL: <input type="url" id="profilePic"></label>
+
+                <h2>Education</h2>
+                <div id="education-container"></div>
+                <button type="button" onclick="addEducation()">Add Education</button>
+
+                <h2>Work Experience</h2>
+                <div id="work-container"></div>
+                <button type="button" onclick="addWorkExperience()">Add Work Experience</button>
+
+                <h2>Skills</h2>
+                <label>Skills (comma-separated): <input type="text" id="skills" required></label>
+
+                <button type="button" onclick="generateResume()">Generate Resume</button>
+            </form>
+        </section>
+
+        <!-- Resume Display Section -->
+        <section class="resume-section" id="resume-display">
+            <h1>Generated Resume</h1>
+            <div id="personalInfo" contenteditable="false"></div>
+            <div id="educationInfo" contenteditable="false"></div>
+            <div id="workExperienceInfo" contenteditable="false"></div>
+            <div id="skillsInfo" contenteditable="false"></div>
+        </section>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
